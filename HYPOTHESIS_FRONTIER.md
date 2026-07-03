@@ -44,6 +44,11 @@ Dictionary companion (`Dictionary.lean`, DROPPABLE ON REVIEW):
 
 ## Frontier obligations (branch `frontier/M1-M2`, statement-first, sorried)
 
+Current frontier branch status: exactly 3 Lean `sorry`, all in
+`Frontier/AnalyticLog.lean`; project `axiom`: 0.  This branch is not a
+candidate for `main`.  On this branch only, `LeanZeroFreeRegions.lean`
+imports the frontier module so CI builds these statements.
+
 `Frontier/AnalyticLog.lean`:
 
 - `exists_analyticLog_on_disk` (M1: analytic log on the open fugacity disc;

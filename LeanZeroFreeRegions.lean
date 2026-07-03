@@ -2,6 +2,7 @@ import Interfaces
 import LeanZeroFreeRegions.Polydisc
 import LeanZeroFreeRegions.LeeYangSingleBond
 import LeanZeroFreeRegions.Dictionary
+import LeanZeroFreeRegions.Frontier.AnalyticLog
 
 /-!
 # LeanZeroFreeRegions

@@ -75,6 +75,12 @@ Verificado al aplicar el paquete sobre `3a7d277`:
 
 - `lake build LeanZeroFreeRegions`: verde.
 - `powershell -ExecutionPolicy Bypass -File scripts/check_no_sorry.ps1`: verde.
+- `lake build +LeanZeroFreeRegions.Frontier.AnalyticLog`: verde en la rama
+  `frontier/M1-M2`; emite exactamente los tres avisos `declaration uses sorry`
+  documentados en `HYPOTHESIS_FRONTIER.md`.
+- `lake build LeanZeroFreeRegions`: verde tambien en `frontier/M1-M2` tras
+  importar el modulo frontier desde el barrel de esa rama; mismos tres avisos
+  `sorry` esperados.
 - Ajustes realizados sobre el patch original: imports del barrel movidos al
   encabezado Lean; instancia `Fintype` de `withActivity` definida por reducción
   explícita; uso de `Finset.analyticOn_fun_sum`; nombres del pin para
