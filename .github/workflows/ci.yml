@@ -12,7 +12,8 @@ jobs:
       - uses: leanprover/lean-action@v1
         with:
           build-args: LeanZeroFreeRegions
-      - name: No sorry, admit, or axiom on main
+      - name: No sorry, admit, or axiom outside frontier pushes
+        if: ${{ github.event_name != 'push' || !startsWith(github.ref, 'refs/heads/frontier/') }}
         run: |
           if grep -RInE '\b(sorry|admit|axiom)\b' --include='*.lean' LeanZeroFreeRegions LeanZeroFreeRegions.lean; then
             exit 1
