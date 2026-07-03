@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with:
+          build-args: LeanZeroFreeRegions
+      - name: No sorry, admit, or axiom on main
+        run: |
+          if grep -RInE '\b(sorry|admit|axiom)\b' --include='*.lean' LeanZeroFreeRegions LeanZeroFreeRegions.lean; then
+            exit 1
+          fi
