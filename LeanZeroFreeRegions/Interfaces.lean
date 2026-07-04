@@ -17,11 +17,24 @@ namespace Interfaces
 open scoped Classical
 open YangMills.KP
 
+/-- Stable M0 predicate interface: a finite polymer system is in the current
+KP-certified zero-free region when it admits a Kotecky-Preiss weight satisfying
+the mother repository's criterion. -/
+def kp_zero_free_region (P : PolymerSystem) [Fintype P.Polymer] : Prop :=
+  KP.InKPZeroFreeRegion P
+
 /-- Stable M0 interface: KP criterion implies nonvanishing partition function. -/
 theorem zero_free_of_kp (P : PolymerSystem) [Fintype P.Polymer]
     {a : P.Polymer → ℝ} (hKP : KPCriterion P a) :
     partition P (Finset.univ : Finset P.Polymer) ≠ 0 :=
   KP.partition_ne_zero_of_kp P hKP
+
+/-- Stable M0 interface: membership in the packaged KP zero-free-region
+predicate implies nonvanishing partition function. -/
+theorem zero_free_of_mem_kp_zero_free_region (P : PolymerSystem)
+    [Fintype P.Polymer] (h : kp_zero_free_region P) :
+    partition P (Finset.univ : Finset P.Polymer) ≠ 0 :=
+  KP.partition_ne_zero_of_mem_kp_zero_free_region P h
 
 /-- Stable M0 interface: KP is a zero-free polydisc certificate for every
 pointwise dominated activity. -/

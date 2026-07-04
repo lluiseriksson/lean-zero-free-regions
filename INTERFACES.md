@@ -12,9 +12,21 @@ import LeanZeroFreeRegions.Interfaces
 ## M0
 
 ```lean
+def LeanZeroFreeRegions.Interfaces.kp_zero_free_region
+    (P : YangMills.KP.PolymerSystem) [Fintype P.Polymer] : Prop
+```
+
+```lean
 theorem LeanZeroFreeRegions.Interfaces.zero_free_of_kp
     (P : YangMills.KP.PolymerSystem) [Fintype P.Polymer]
     {a : P.Polymer → ℝ} (hKP : YangMills.KP.KPCriterion P a) :
+    YangMills.KP.partition P (Finset.univ : Finset P.Polymer) ≠ 0
+```
+
+```lean
+theorem LeanZeroFreeRegions.Interfaces.zero_free_of_mem_kp_zero_free_region
+    (P : YangMills.KP.PolymerSystem) [Fintype P.Polymer]
+    (h : LeanZeroFreeRegions.Interfaces.kp_zero_free_region P) :
     YangMills.KP.partition P (Finset.univ : Finset P.Polymer) ≠ 0
 ```
 
