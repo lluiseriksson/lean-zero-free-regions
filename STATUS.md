@@ -1,16 +1,16 @@
 # Status
 
-Last satellite check: 2026-07-04T17:16:01Z.
+Last satellite check: 2026-07-04T18:10:07Z.
 
-Checked HEAD: `05f3814f45cb42868a246b7870cea4963512bd22`
-(`Merge pull request #10 from lluiseriksson/codex/expose-unit-circle-product-interface`).
+Checked HEAD: `c7593461eea880440b5ea466b110f83a78994d52`
+(`Merge pull request #11 from lluiseriksson/codex/two-single-bond-product-oracle`).
 
 Remote health at check time:
 
 - `CI` on `main` for this HEAD: success
-  ([run 28712687122](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28712687122)).
+  ([run 28713819123](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28713819123)).
 - `heartbeat` on `main` for this HEAD: success
-  ([run 28712687123](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28712687123)).
+  ([run 28713819096](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28713819096)).
 
 ## Mother-facing digest
 
