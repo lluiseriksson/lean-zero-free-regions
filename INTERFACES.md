@@ -65,6 +65,30 @@ theorem LeanZeroFreeRegions.Interfaces.lee_yang_circle_of_hypothesis
     LeanZeroFreeRegions.AllZerosOnUnitCircle I.fieldPolynomial
 ```
 
+```lean
+noncomputable def LeanZeroFreeRegions.Interfaces.single_bond_polynomial
+    (c : ℝ) : Polynomial ℂ
+```
+
+```lean
+noncomputable def LeanZeroFreeRegions.Interfaces.single_bond_instance
+    (c : ℝ) : LeanZeroFreeRegions.FerromagneticIsingInstance
+```
+
+```lean
+theorem LeanZeroFreeRegions.Interfaces.lee_yang_single_bond_circle
+    {c : ℝ} (hc : |c| ≤ 1) :
+    LeanZeroFreeRegions.AllZerosOnUnitCircle
+      (LeanZeroFreeRegions.Interfaces.single_bond_polynomial c)
+```
+
+```lean
+theorem LeanZeroFreeRegions.Interfaces.lee_yang_single_bond_hypothesis
+    {c : ℝ} (hc : |c| ≤ 1) :
+    LeanZeroFreeRegions.LeeYangCircleHypothesis
+      (LeanZeroFreeRegions.Interfaces.single_bond_instance c)
+```
+
 ## M3
 
 ```lean
