@@ -66,6 +66,14 @@ theorem LeanZeroFreeRegions.Interfaces.lee_yang_circle_of_hypothesis
 ```
 
 ```lean
+theorem LeanZeroFreeRegions.Interfaces.all_zeros_on_unit_circle_mul
+    {p q : Polynomial ℂ}
+    (hp : LeanZeroFreeRegions.AllZerosOnUnitCircle p)
+    (hq : LeanZeroFreeRegions.AllZerosOnUnitCircle q) :
+    LeanZeroFreeRegions.AllZerosOnUnitCircle (p * q)
+```
+
+```lean
 noncomputable def LeanZeroFreeRegions.Interfaces.single_bond_polynomial
     (c : ℝ) : Polynomial ℂ
 ```

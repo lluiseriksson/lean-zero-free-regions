@@ -63,6 +63,13 @@ theorem lee_yang_circle_of_hypothesis (I : FerromagneticIsingInstance)
     AllZerosOnUnitCircle I.fieldPolynomial :=
   lee_yang_circle I h
 
+/-- Stable M2 tensorization interface: unit-circle zero location is preserved
+under products. -/
+theorem all_zeros_on_unit_circle_mul {p q : Polynomial ℂ}
+    (hp : AllZerosOnUnitCircle p) (hq : AllZerosOnUnitCircle q) :
+    AllZerosOnUnitCircle (p * q) :=
+  AllZerosOnUnitCircle.mul hp hq
+
 /-- Stable M2 example interface: the single ferromagnetic-bond field polynomial. -/
 noncomputable def single_bond_polynomial (c : ℝ) : Polynomial ℂ :=
   singleBondPolynomial c

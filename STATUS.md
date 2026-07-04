@@ -1,16 +1,16 @@
 # Status
 
-Last satellite check: 2026-07-04T14:58:16Z.
+Last satellite check: 2026-07-04T16:00:41Z.
 
-Checked HEAD: `2a86aa9284f4cf7f453356e85f624c4f031b8566`
-(`Merge pull request #8 from lluiseriksson/codex/expose-single-bond-interface`).
+Checked HEAD: `597515e927b515af598486941f54d124df069027`
+(`Merge pull request #9 from lluiseriksson/codex/update-status-head-2a86aa9`).
 
 Remote health at check time:
 
 - `CI` on `main` for this HEAD: success
-  ([run 28709060317](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28709060317)).
+  ([run 28710160056](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28710160056)).
 - `heartbeat` on `main` for this HEAD: success
-  ([run 28709741699](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28709741699)).
+  ([run 28710160086](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28710160086)).
 
 ## Mother-facing digest
 
@@ -28,6 +28,7 @@ Exact stable names currently exported:
 - `LeanZeroFreeRegions.Interfaces.analyticOn_partition_unit_fugacity_section`
 - `LeanZeroFreeRegions.Interfaces.analytic_clustering_package`
 - `LeanZeroFreeRegions.Interfaces.lee_yang_circle_of_hypothesis`
+- `LeanZeroFreeRegions.Interfaces.all_zeros_on_unit_circle_mul`
 - `LeanZeroFreeRegions.Interfaces.single_bond_polynomial`
 - `LeanZeroFreeRegions.Interfaces.single_bond_instance`
 - `LeanZeroFreeRegions.Interfaces.lee_yang_single_bond_circle`
@@ -58,9 +59,10 @@ Useful source files:
 - `INTERFACES.md`: signature contract and breaking-change policy.
 
 Next exact consumer step: import `LeanZeroFreeRegions.Interfaces` from the
-mother repository and run a minimal downstream smoke test against
-`lee_yang_single_bond_hypothesis` for the one-bond polynomial under
-`hc : |c| <= 1`; use `zero_free_polydisc_of_kp` or
+mother repository and run a minimal downstream smoke test composing
+`all_zeros_on_unit_circle_mul` with `lee_yang_single_bond_circle` for a product
+of two one-bond polynomials under separate hypotheses `hc1 : |c1| <= 1` and
+`hc2 : |c2| <= 1`; use `zero_free_polydisc_of_kp` or
 `zero_free_unit_fugacity_disc_of_kp` only under an existing
 `YangMills.KP.KPCriterion P a`, and keep analytic-log and clustering claims
 behind their explicit M1 hypotheses.
