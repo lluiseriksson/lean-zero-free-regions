@@ -18,6 +18,34 @@ theorem LeanZeroFreeRegions.Interfaces.zero_free_of_kp
     YangMills.KP.partition P (Finset.univ : Finset P.Polymer) ≠ 0
 ```
 
+```lean
+theorem LeanZeroFreeRegions.Interfaces.zero_free_polydisc_of_kp
+    (P : YangMills.KP.PolymerSystem) [Fintype P.Polymer]
+    {a : P.Polymer → ℝ} (hKP : YangMills.KP.KPCriterion P a)
+    (z : P.Polymer → ℂ)
+    (hz : ∀ X, ‖z X‖ ≤ ‖P.activity X‖) :
+    YangMills.KP.partition (P.withActivity z)
+      (Finset.univ : Finset P.Polymer) ≠ 0
+```
+
+```lean
+theorem LeanZeroFreeRegions.Interfaces.zero_free_unit_fugacity_disc_of_kp
+    (P : YangMills.KP.PolymerSystem) [Fintype P.Polymer]
+    {a : P.Polymer → ℝ} (hKP : YangMills.KP.KPCriterion P a)
+    {w : ℂ} (hw : ‖w‖ ≤ 1) :
+    YangMills.KP.partition (P.diskFamily w)
+      (Finset.univ : Finset P.Polymer) ≠ 0
+```
+
+```lean
+theorem LeanZeroFreeRegions.Interfaces.analyticOn_partition_unit_fugacity_section
+    (P : YangMills.KP.PolymerSystem) [Fintype P.Polymer] :
+    AnalyticOn ℂ
+      (fun w => YangMills.KP.partition (P.diskFamily w)
+        (Finset.univ : Finset P.Polymer))
+      Set.univ
+```
+
 ## M1
 
 ```lean
