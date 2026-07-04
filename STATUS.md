@@ -1,16 +1,16 @@
 # Status
 
-Last satellite check: 2026-07-04T10:25:35Z.
+Last satellite check: 2026-07-04T11:36:24Z.
 
-Checked HEAD: `db6bbc5a441d3afd1eb46cee9f71c8ac7b93273f`
-(`Add mother-facing status digest (#6)`).
+Checked HEAD: `38023d7a8271aa7a4e565f9a3a0dbe8c4a497b35`
+(`Merge pull request #7 from lluiseriksson/codex/update-status-heartbeat-db6bbc5`).
 
 Remote health at check time:
 
 - `CI` on `main` for this HEAD: success
-  ([run 28702655848](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28702655848)).
+  ([run 28703951119](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28703951119)).
 - `heartbeat` on `main` for this HEAD: success
-  ([run 28702655835](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28702655835)).
+  ([run 28703951090](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28703951090)).
 
 ## Mother-facing digest
 
@@ -28,6 +28,10 @@ Exact stable names currently exported:
 - `LeanZeroFreeRegions.Interfaces.analyticOn_partition_unit_fugacity_section`
 - `LeanZeroFreeRegions.Interfaces.analytic_clustering_package`
 - `LeanZeroFreeRegions.Interfaces.lee_yang_circle_of_hypothesis`
+- `LeanZeroFreeRegions.Interfaces.single_bond_polynomial`
+- `LeanZeroFreeRegions.Interfaces.single_bond_instance`
+- `LeanZeroFreeRegions.Interfaces.lee_yang_single_bond_circle`
+- `LeanZeroFreeRegions.Interfaces.lee_yang_single_bond_hypothesis`
 - `LeanZeroFreeRegions.Interfaces.heilmann_lieb_of_hypothesis`
 
 Main hypotheses consumed by the M0/M1-facing surface:
@@ -40,16 +44,23 @@ Main hypotheses consumed by the M0/M1-facing surface:
   `LeanZeroFreeRegions.AnalyticLogPartitionHypothesis Omega Z logZ`
 - explicit clustering hypothesis
   `LeanZeroFreeRegions.TruncatedCorrelationDecay`
+- one-bond M2 hypothesis `hc : |c| <= 1` for
+  `LeanZeroFreeRegions.Interfaces.lee_yang_single_bond_circle` and
+  `LeanZeroFreeRegions.Interfaces.lee_yang_single_bond_hypothesis`
 
 Useful source files:
 
 - `LeanZeroFreeRegions/Interfaces.lean`: stable downstream import surface.
 - `LeanZeroFreeRegions/Polydisc.lean`: KP monotonicity, polydisc
   nonvanishing, and one-parameter analytic section.
+- `LeanZeroFreeRegions/LeeYangSingleBond.lean`: proved one-bond Lee-Yang
+  example and product closure helper.
 - `INTERFACES.md`: signature contract and breaking-change policy.
 
 Next exact consumer step: import `LeanZeroFreeRegions.Interfaces` from the
 mother repository and use `zero_free_polydisc_of_kp` or
 `zero_free_unit_fugacity_disc_of_kp` only under an existing
 `YangMills.KP.KPCriterion P a`; keep analytic-log and clustering claims behind
-their explicit M1 hypotheses.
+their explicit M1 hypotheses.  For a minimal M2 smoke test, consume
+`lee_yang_single_bond_hypothesis` only for the one-bond polynomial under
+`hc : |c| <= 1`.

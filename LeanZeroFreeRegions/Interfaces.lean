@@ -1,6 +1,7 @@
 import LeanZeroFreeRegions.Polydisc
 import LeanZeroFreeRegions.AnalyticClustering
 import LeanZeroFreeRegions.LeeYang
+import LeanZeroFreeRegions.LeeYangSingleBond
 import LeanZeroFreeRegions.HeilmannLieb
 
 /-!
@@ -61,6 +62,26 @@ theorem lee_yang_circle_of_hypothesis (I : FerromagneticIsingInstance)
     (h : LeeYangCircleHypothesis I) :
     AllZerosOnUnitCircle I.fieldPolynomial :=
   lee_yang_circle I h
+
+/-- Stable M2 example interface: the single ferromagnetic-bond field polynomial. -/
+noncomputable def single_bond_polynomial (c : ℝ) : Polynomial ℂ :=
+  singleBondPolynomial c
+
+/-- Stable M2 example interface: the single ferromagnetic-bond instance. -/
+noncomputable def single_bond_instance (c : ℝ) : FerromagneticIsingInstance :=
+  singleBondInstance c
+
+/-- Stable M2 example interface: the proved Lee-Yang circle conclusion for one
+ferromagnetic bond. -/
+theorem lee_yang_single_bond_circle {c : ℝ} (hc : |c| ≤ 1) :
+    AllZerosOnUnitCircle (single_bond_polynomial c) := by
+  simpa [single_bond_polynomial] using allZerosOnUnitCircle_singleBondPolynomial hc
+
+/-- Stable M2 example interface: the one-bond proof discharges the explicit
+Lee-Yang hypothesis record. -/
+theorem lee_yang_single_bond_hypothesis {c : ℝ} (hc : |c| ≤ 1) :
+    LeeYangCircleHypothesis (single_bond_instance c) := by
+  simpa [single_bond_instance] using leeYangCircleHypothesis_singleBond hc
 
 /-- Stable M3 interface: Heilmann-Lieb root-location conclusion from explicit
 theorem hypothesis. -/
