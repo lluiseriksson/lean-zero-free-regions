@@ -91,6 +91,14 @@ theorem LeanZeroFreeRegions.Interfaces.lee_yang_single_bond_circle
 ```
 
 ```lean
+theorem LeanZeroFreeRegions.Interfaces.two_single_bond_product_circle
+    {c1 c2 : ℝ} (hc1 : |c1| ≤ 1) (hc2 : |c2| ≤ 1) :
+    LeanZeroFreeRegions.AllZerosOnUnitCircle
+      (LeanZeroFreeRegions.Interfaces.single_bond_polynomial c1 *
+        LeanZeroFreeRegions.Interfaces.single_bond_polynomial c2)
+```
+
+```lean
 theorem LeanZeroFreeRegions.Interfaces.lee_yang_single_bond_hypothesis
     {c : ℝ} (hc : |c| ≤ 1) :
     LeanZeroFreeRegions.LeeYangCircleHypothesis
