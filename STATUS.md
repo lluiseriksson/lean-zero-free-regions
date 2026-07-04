@@ -1,16 +1,16 @@
 # Status
 
-Last satellite check: 2026-07-04T07:24:52Z.
+Last satellite check: 2026-07-04T10:25:35Z.
 
-Checked HEAD: `33c3bd48f8e450a1c69834e70d42846c70b4f030`
-(`Expose KP polydisc interfaces`).
+Checked HEAD: `db6bbc5a441d3afd1eb46cee9f71c8ac7b93273f`
+(`Add mother-facing status digest (#6)`).
 
 Remote health at check time:
 
 - `CI` on `main` for this HEAD: success
-  ([run 28698378492](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28698378492)).
+  ([run 28702655848](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28702655848)).
 - `heartbeat` on `main` for this HEAD: success
-  ([run 28698887300](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28698887300)).
+  ([run 28702655835](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28702655835)).
 
 ## Mother-facing digest
 
