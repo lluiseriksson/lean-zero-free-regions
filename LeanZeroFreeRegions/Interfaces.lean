@@ -84,6 +84,15 @@ theorem lee_yang_single_bond_circle {c : ℝ} (hc : |c| ≤ 1) :
     AllZerosOnUnitCircle (single_bond_polynomial c) := by
   simpa [single_bond_polynomial] using allZerosOnUnitCircle_singleBondPolynomial hc
 
+/-- Stable M2 smoke-test interface: a product of two single ferromagnetic-bond
+field polynomials has all zeros on the unit circle. -/
+theorem two_single_bond_product_circle {c1 c2 : ℝ}
+    (hc1 : |c1| ≤ 1) (hc2 : |c2| ≤ 1) :
+    AllZerosOnUnitCircle (single_bond_polynomial c1 * single_bond_polynomial c2) :=
+  all_zeros_on_unit_circle_mul
+    (lee_yang_single_bond_circle hc1)
+    (lee_yang_single_bond_circle hc2)
+
 /-- Stable M2 example interface: the one-bond proof discharges the explicit
 Lee-Yang hypothesis record. -/
 theorem lee_yang_single_bond_hypothesis {c : ℝ} (hc : |c| ≤ 1) :

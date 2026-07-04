@@ -1,16 +1,16 @@
 # Status
 
-Last satellite check: 2026-07-04T16:00:41Z.
+Last satellite check: 2026-07-04T17:16:01Z.
 
-Checked HEAD: `597515e927b515af598486941f54d124df069027`
-(`Merge pull request #9 from lluiseriksson/codex/update-status-head-2a86aa9`).
+Checked HEAD: `05f3814f45cb42868a246b7870cea4963512bd22`
+(`Merge pull request #10 from lluiseriksson/codex/expose-unit-circle-product-interface`).
 
 Remote health at check time:
 
 - `CI` on `main` for this HEAD: success
-  ([run 28710160056](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28710160056)).
+  ([run 28712687122](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28712687122)).
 - `heartbeat` on `main` for this HEAD: success
-  ([run 28710160086](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28710160086)).
+  ([run 28712687123](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28712687123)).
 
 ## Mother-facing digest
 
@@ -32,6 +32,7 @@ Exact stable names currently exported:
 - `LeanZeroFreeRegions.Interfaces.single_bond_polynomial`
 - `LeanZeroFreeRegions.Interfaces.single_bond_instance`
 - `LeanZeroFreeRegions.Interfaces.lee_yang_single_bond_circle`
+- `LeanZeroFreeRegions.Interfaces.two_single_bond_product_circle`
 - `LeanZeroFreeRegions.Interfaces.lee_yang_single_bond_hypothesis`
 - `LeanZeroFreeRegions.Interfaces.heilmann_lieb_of_hypothesis`
 
@@ -48,6 +49,9 @@ Main hypotheses consumed by the M0/M1-facing surface:
 - one-bond M2 hypothesis `hc : |c| <= 1` for
   `LeanZeroFreeRegions.Interfaces.lee_yang_single_bond_circle` and
   `LeanZeroFreeRegions.Interfaces.lee_yang_single_bond_hypothesis`
+- two independent one-bond M2 hypotheses `hc1 : |c1| <= 1` and
+  `hc2 : |c2| <= 1` for
+  `LeanZeroFreeRegions.Interfaces.two_single_bond_product_circle`
 
 Useful source files:
 
@@ -59,10 +63,10 @@ Useful source files:
 - `INTERFACES.md`: signature contract and breaking-change policy.
 
 Next exact consumer step: import `LeanZeroFreeRegions.Interfaces` from the
-mother repository and run a minimal downstream smoke test composing
-`all_zeros_on_unit_circle_mul` with `lee_yang_single_bond_circle` for a product
-of two one-bond polynomials under separate hypotheses `hc1 : |c1| <= 1` and
-`hc2 : |c2| <= 1`; use `zero_free_polydisc_of_kp` or
+mother repository and run a minimal downstream smoke test applying
+`two_single_bond_product_circle` for a product of two one-bond polynomials under
+separate hypotheses `hc1 : |c1| <= 1` and `hc2 : |c2| <= 1`; use
+`zero_free_polydisc_of_kp` or
 `zero_free_unit_fugacity_disc_of_kp` only under an existing
 `YangMills.KP.KPCriterion P a`, and keep analytic-log and clustering claims
 behind their explicit M1 hypotheses.
