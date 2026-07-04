@@ -1,16 +1,16 @@
 # Status
 
-Last satellite check: 2026-07-04T11:36:24Z.
+Last satellite check: 2026-07-04T14:58:16Z.
 
-Checked HEAD: `38023d7a8271aa7a4e565f9a3a0dbe8c4a497b35`
-(`Merge pull request #7 from lluiseriksson/codex/update-status-heartbeat-db6bbc5`).
+Checked HEAD: `2a86aa9284f4cf7f453356e85f624c4f031b8566`
+(`Merge pull request #8 from lluiseriksson/codex/expose-single-bond-interface`).
 
 Remote health at check time:
 
 - `CI` on `main` for this HEAD: success
-  ([run 28703951119](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28703951119)).
+  ([run 28709060317](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28709060317)).
 - `heartbeat` on `main` for this HEAD: success
-  ([run 28703951090](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28703951090)).
+  ([run 28709741699](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28709741699)).
 
 ## Mother-facing digest
 
@@ -58,9 +58,9 @@ Useful source files:
 - `INTERFACES.md`: signature contract and breaking-change policy.
 
 Next exact consumer step: import `LeanZeroFreeRegions.Interfaces` from the
-mother repository and use `zero_free_polydisc_of_kp` or
+mother repository and run a minimal downstream smoke test against
+`lee_yang_single_bond_hypothesis` for the one-bond polynomial under
+`hc : |c| <= 1`; use `zero_free_polydisc_of_kp` or
 `zero_free_unit_fugacity_disc_of_kp` only under an existing
-`YangMills.KP.KPCriterion P a`; keep analytic-log and clustering claims behind
-their explicit M1 hypotheses.  For a minimal M2 smoke test, consume
-`lee_yang_single_bond_hypothesis` only for the one-bond polynomial under
-`hc : |c| <= 1`.
+`YangMills.KP.KPCriterion P a`, and keep analytic-log and clustering claims
+behind their explicit M1 hypotheses.
