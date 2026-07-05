@@ -1,20 +1,20 @@
 # Status
 
-Last satellite check: 2026-07-05T12:16:06Z.
+Last satellite check: 2026-07-05T17:48:30Z.
 
-Checked HEAD: `1e1c76985f9588fbe0be7d1a215abb6db47546a1`
-(`update status for 596a13a main (#17)`).
+Checked HEAD: `8e748b60a9cc332f67191888dc3c1da5703c95e0`
+(`update status for 1e1c769 main (#18)`).
 
 Remote health at check time:
 
 - `CI` on `main` for this HEAD: success
-  ([run 28738923045](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28738923045)).
+  ([run 28748026900](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28748026900)).
 - `heartbeat` on `main` for this HEAD: success
-  ([run 28738923029](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28738923029)).
+  ([run 28748026913](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28748026913)).
 
 Most recent merged satellite PR:
 
-- [#17](https://github.com/lluiseriksson/lean-zero-free-regions/pull/17)
+- [#18](https://github.com/lluiseriksson/lean-zero-free-regions/pull/18)
   refreshed this status against the packaged M0 interface
   `LeanZeroFreeRegions.Interfaces.kp_zero_free_region` and the consumer theorem
   `LeanZeroFreeRegions.Interfaces.zero_free_of_mem_kp_zero_free_region`.
