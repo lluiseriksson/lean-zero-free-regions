@@ -1,25 +1,24 @@
 # Status
 
-Last satellite check: 2026-07-05T19:58:03Z.
+Last satellite check: 2026-07-05T21:58:36Z.
 
-Checked HEAD: `8ffc42928a462910885bc17daef2205c2674ad96`
-(`expose dominated KP region interface (#20)`).
+Checked HEAD: `5e85474eab4091458390ea5fccc404e297e9a528`
+(`Update status for 8ffc429 main (#21)`).
 
 Remote health at check time:
 
 - `CI` on `main` for this HEAD: success
-  ([run 28751852094](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28751852094)).
+  ([run 28755295837](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28755295837)).
 - `heartbeat` on `main` for this HEAD: success
-  ([run 28751852099](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28751852099)).
+  ([run 28755295831](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28755295831)).
 
 Most recent merged satellite PR:
 
-- [#20](https://github.com/lluiseriksson/lean-zero-free-regions/pull/20)
-  exposed the backward-compatible M0 wrapper
-  `LeanZeroFreeRegions.Interfaces.dominated_activity_mem_kp_zero_free_region`.
+- [#21](https://github.com/lluiseriksson/lean-zero-free-regions/pull/21)
+  refreshed this mother-facing digest after #20 landed.
 
-This check is documentation-only after #20 landed. No existing interface name or
-signature changed.
+This check is documentation-only after #21 landed. No existing interface name or
+signature changed, and no new mathematical claim is introduced.
 
 ## Mother-facing digest
 
