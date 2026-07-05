@@ -1,16 +1,23 @@
 # Status
 
-Last satellite check: 2026-07-04T23:41:39Z.
+Last satellite check: 2026-07-05T05:50:42Z.
 
-Checked HEAD: `039145d40ef530e83451728e93f88f9d465cc68f`
-(`update status for fd686d2 main (#15)`).
+Checked HEAD: `596a13a015a712c1fad70cb394b709ca467c3ac9`
+(`expose packaged kp region interface (#16)`).
 
 Remote health at check time:
 
 - `CI` on `main` for this HEAD: success
-  ([run 28721843249](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28721843249)).
+  ([run 28730310134](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28730310134)).
 - `heartbeat` on `main` for this HEAD: success
-  ([run 28723025823](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28723025823)).
+  ([run 28730310156](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28730310156)).
+
+Most recent merged satellite PR:
+
+- [#16](https://github.com/lluiseriksson/lean-zero-free-regions/pull/16)
+  exposed the packaged M0 interface
+  `LeanZeroFreeRegions.Interfaces.kp_zero_free_region` and the consumer theorem
+  `LeanZeroFreeRegions.Interfaces.zero_free_of_mem_kp_zero_free_region`.
 
 ## Mother-facing digest
 
