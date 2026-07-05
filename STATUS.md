@@ -1,23 +1,26 @@
 # Status
 
-Last satellite check: 2026-07-05T05:50:42Z.
+Last satellite check: 2026-07-05T12:16:06Z.
 
-Checked HEAD: `596a13a015a712c1fad70cb394b709ca467c3ac9`
-(`expose packaged kp region interface (#16)`).
+Checked HEAD: `1e1c76985f9588fbe0be7d1a215abb6db47546a1`
+(`update status for 596a13a main (#17)`).
 
 Remote health at check time:
 
 - `CI` on `main` for this HEAD: success
-  ([run 28730310134](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28730310134)).
+  ([run 28738923045](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28738923045)).
 - `heartbeat` on `main` for this HEAD: success
-  ([run 28730310156](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28730310156)).
+  ([run 28738923029](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28738923029)).
 
 Most recent merged satellite PR:
 
-- [#16](https://github.com/lluiseriksson/lean-zero-free-regions/pull/16)
-  exposed the packaged M0 interface
+- [#17](https://github.com/lluiseriksson/lean-zero-free-regions/pull/17)
+  refreshed this status against the packaged M0 interface
   `LeanZeroFreeRegions.Interfaces.kp_zero_free_region` and the consumer theorem
   `LeanZeroFreeRegions.Interfaces.zero_free_of_mem_kp_zero_free_region`.
+
+This check made no interface change; the downstream import surface below remains
+the current mother-facing digest.
 
 ## Mother-facing digest
 
