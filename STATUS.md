@@ -1,27 +1,25 @@
 # Status
 
-Last satellite check: 2026-07-05T19:03:35Z.
+Last satellite check: 2026-07-05T19:58:03Z.
 
-Checked HEAD: `30300af8fc6c61277f7e9bf9a2ffde4d768b82a3`
-(`update status for 8e748b6 main`).
+Checked HEAD: `8ffc42928a462910885bc17daef2205c2674ad96`
+(`expose dominated KP region interface (#20)`).
 
 Remote health at check time:
 
 - `CI` on `main` for this HEAD: success
-  ([run 28750019727](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28750019727)).
+  ([run 28751852094](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28751852094)).
 - `heartbeat` on `main` for this HEAD: success
-  ([run 28750350132](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28750350132)).
+  ([run 28751852099](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28751852099)).
 
 Most recent merged satellite PR:
 
-- [#19](https://github.com/lluiseriksson/lean-zero-free-regions/pull/19)
-  refreshed this status against the packaged M0 interface
-  `LeanZeroFreeRegions.Interfaces.kp_zero_free_region` and the consumer theorem
-  `LeanZeroFreeRegions.Interfaces.zero_free_of_mem_kp_zero_free_region`.
+- [#20](https://github.com/lluiseriksson/lean-zero-free-regions/pull/20)
+  exposed the backward-compatible M0 wrapper
+  `LeanZeroFreeRegions.Interfaces.dominated_activity_mem_kp_zero_free_region`.
 
-This check adds one backward-compatible M0 interface wrapper:
-`LeanZeroFreeRegions.Interfaces.dominated_activity_mem_kp_zero_free_region`.
-No existing interface name or signature changed.
+This check is documentation-only after #20 landed. No existing interface name or
+signature changed.
 
 ## Mother-facing digest
 
