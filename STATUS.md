@@ -1,26 +1,27 @@
 # Status
 
-Last satellite check: 2026-07-05T17:48:30Z.
+Last satellite check: 2026-07-05T19:03:35Z.
 
-Checked HEAD: `8e748b60a9cc332f67191888dc3c1da5703c95e0`
-(`update status for 1e1c769 main (#18)`).
+Checked HEAD: `30300af8fc6c61277f7e9bf9a2ffde4d768b82a3`
+(`update status for 8e748b6 main`).
 
 Remote health at check time:
 
 - `CI` on `main` for this HEAD: success
-  ([run 28748026900](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28748026900)).
+  ([run 28750019727](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28750019727)).
 - `heartbeat` on `main` for this HEAD: success
-  ([run 28748026913](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28748026913)).
+  ([run 28750350132](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28750350132)).
 
 Most recent merged satellite PR:
 
-- [#18](https://github.com/lluiseriksson/lean-zero-free-regions/pull/18)
+- [#19](https://github.com/lluiseriksson/lean-zero-free-regions/pull/19)
   refreshed this status against the packaged M0 interface
   `LeanZeroFreeRegions.Interfaces.kp_zero_free_region` and the consumer theorem
   `LeanZeroFreeRegions.Interfaces.zero_free_of_mem_kp_zero_free_region`.
 
-This check made no interface change; the downstream import surface below remains
-the current mother-facing digest.
+This check adds one backward-compatible M0 interface wrapper:
+`LeanZeroFreeRegions.Interfaces.dominated_activity_mem_kp_zero_free_region`.
+No existing interface name or signature changed.
 
 ## Mother-facing digest
 
@@ -36,6 +37,7 @@ Exact stable names currently exported:
 - `LeanZeroFreeRegions.Interfaces.zero_free_of_kp`
 - `LeanZeroFreeRegions.Interfaces.zero_free_of_mem_kp_zero_free_region`
 - `LeanZeroFreeRegions.Interfaces.zero_free_polydisc_of_kp`
+- `LeanZeroFreeRegions.Interfaces.dominated_activity_mem_kp_zero_free_region`
 - `LeanZeroFreeRegions.Interfaces.zero_free_unit_fugacity_disc_of_kp`
 - `LeanZeroFreeRegions.Interfaces.analyticOn_partition_unit_fugacity_section`
 - `LeanZeroFreeRegions.Interfaces.analytic_clustering_package`
@@ -78,8 +80,9 @@ Useful source files:
 
 Next exact consumer step: import `LeanZeroFreeRegions.Interfaces` from the
 mother repository and run a minimal downstream smoke test applying
-`zero_free_of_mem_kp_zero_free_region P h` when a packaged
-`kp_zero_free_region P` witness is already available; keep
+`dominated_activity_mem_kp_zero_free_region P hKP z hz` to package a dominated
+activity, then `zero_free_of_mem_kp_zero_free_region (P.withActivity z) h`;
+keep
 `two_single_bond_product_circle` as the current M2 smoke test under separate
 hypotheses `hc1 : |c1| <= 1` and `hc2 : |c2| <= 1`, and keep analytic-log and
 clustering claims behind their explicit M1 hypotheses.
