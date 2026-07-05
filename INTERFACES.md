@@ -41,6 +41,15 @@ theorem LeanZeroFreeRegions.Interfaces.zero_free_polydisc_of_kp
 ```
 
 ```lean
+theorem LeanZeroFreeRegions.Interfaces.dominated_activity_mem_kp_zero_free_region
+    (P : YangMills.KP.PolymerSystem) [Fintype P.Polymer]
+    {a : P.Polymer → ℝ} (hKP : YangMills.KP.KPCriterion P a)
+    (z : P.Polymer → ℂ)
+    (hz : ∀ X, ‖z X‖ ≤ ‖P.activity X‖) :
+    LeanZeroFreeRegions.Interfaces.kp_zero_free_region (P.withActivity z)
+```
+
+```lean
 theorem LeanZeroFreeRegions.Interfaces.zero_free_unit_fugacity_disc_of_kp
     (P : YangMills.KP.PolymerSystem) [Fintype P.Polymer]
     {a : P.Polymer → ℝ} (hKP : YangMills.KP.KPCriterion P a)
