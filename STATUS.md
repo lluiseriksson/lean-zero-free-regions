@@ -1,26 +1,26 @@
 # Status
 
-Last satellite check: 2026-07-06T04:22:39Z.
+Last satellite check: 2026-07-06T06:42:00Z.
 
-Checked HEAD: `f9761503308b5a525ceebfebafdd897e65473ec3`
-(`expose fugacity section polynomial interface (#26)`).
+Checked HEAD: `211077e44ae209c2634f83b012778800fc79edda`
+(`update status for f976150 main (#27)`).
 
 Remote health at check time:
 
 - `CI` on `main` for this HEAD: success
-  ([run 28766901917](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28766901917)).
+  ([run 28771589689](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28771589689)).
 - `heartbeat` on `main` for this HEAD: success
-  ([run 28766901953](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28766901953)).
+  ([run 28771589594](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28771589594)).
 
 Most recent merged satellite PR:
 
-- [#26](https://github.com/lluiseriksson/lean-zero-free-regions/pull/26)
-  exposed the stable unit-fugacity polynomial-section identity through
-  `LeanZeroFreeRegions.Interfaces`.
+- [#27](https://github.com/lluiseriksson/lean-zero-free-regions/pull/27)
+  refreshed this mother-facing digest after the unit-fugacity
+  polynomial-section interface landed.
 
-This check adds one stable M1 substrate wrapper exposing the already-proved
-explicit polynomial form of the unit-fugacity partition section. No existing
-interface name or signature changed, and no new mathematical claim is introduced.
+This check refreshes the mother-facing heartbeat/digest for the post-#27 main
+HEAD. No existing interface name or signature changed, and no new mathematical
+claim is introduced.
 
 ## Mother-facing digest
 
