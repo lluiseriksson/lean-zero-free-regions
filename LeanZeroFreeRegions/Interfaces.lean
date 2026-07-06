@@ -29,6 +29,14 @@ theorem zero_free_of_kp (P : PolymerSystem) [Fintype P.Polymer]
     partition P (Finset.univ : Finset P.Polymer) ≠ 0 :=
   KP.partition_ne_zero_of_kp P hKP
 
+/-- Stable M0 interface: KP certificates are monotone under pointwise
+domination of activities. -/
+theorem kpCriterion_of_dominated_activity (P : PolymerSystem)
+    [Fintype P.Polymer] {a : P.Polymer → ℝ} (hKP : KPCriterion P a)
+    (z : P.Polymer → ℂ) (hz : ∀ X, ‖z X‖ ≤ ‖P.activity X‖) :
+    KPCriterion (P.withActivity z) a :=
+  KP.kpCriterion_withActivity_of_le P hKP z hz
+
 /-- Stable M0 interface: membership in the packaged KP zero-free-region
 predicate implies nonvanishing partition function. -/
 theorem zero_free_of_mem_kp_zero_free_region (P : PolymerSystem)

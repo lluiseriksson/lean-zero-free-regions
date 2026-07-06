@@ -1,26 +1,26 @@
 # Status
 
-Last satellite check: 2026-07-06T08:48:04Z.
+Last satellite check: 2026-07-06T09:56:46Z.
 
-Checked HEAD: `3dca6ae932032b4d03111ed0caf8f5982a5cf02b`
-(`expose unit fugacity KP membership (#29)`).
+Checked HEAD: `bbca62bf43133571a1a62d8fa889889d5dbe0453`
+(`update status for 3dca6ae main (#30)`).
 
 Remote health at check time:
 
-- `heartbeat` on `main` for this HEAD: success
-  ([run 28777784795](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28777784795)).
 - `CI` on `main` for this HEAD: success
-  ([run 28777784734](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28777784734)).
+  ([run 28780079936](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28780079936)).
+- `heartbeat` on `main` for this HEAD: success
+  ([run 28780700009](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28780700009)).
 
 Most recent merged satellite PR:
 
-- [#29](https://github.com/lluiseriksson/lean-zero-free-regions/pull/29)
-  exposed `unit_fugacity_mem_kp_zero_free_region`, a packaged membership
-  theorem for the unit-fugacity KP zero-free region.
+- [#30](https://github.com/lluiseriksson/lean-zero-free-regions/pull/30)
+  refreshed this status digest after
+  `unit_fugacity_mem_kp_zero_free_region` landed.
 
-The checked HEAD exposes a small composable M0 wrapper for the unit-fugacity section:
-membership in the packaged KP zero-free-region predicate follows from the same
-KP certificate and `‖w‖ ≤ 1`. No existing interface name or signature changed,
+This branch exposes a small composable M0 wrapper for KP monotonicity:
+`kpCriterion_of_dominated_activity` reuses the same KP weight for any
+pointwise dominated activity. No existing interface name or signature changed,
 and no new mathematical claim is introduced.
 
 ## Mother-facing digest
@@ -35,6 +35,7 @@ Exact stable names currently exported:
 
 - `LeanZeroFreeRegions.Interfaces.kp_zero_free_region`
 - `LeanZeroFreeRegions.Interfaces.zero_free_of_kp`
+- `LeanZeroFreeRegions.Interfaces.kpCriterion_of_dominated_activity`
 - `LeanZeroFreeRegions.Interfaces.zero_free_of_mem_kp_zero_free_region`
 - `LeanZeroFreeRegions.Interfaces.zero_free_polydisc_of_kp`
 - `LeanZeroFreeRegions.Interfaces.dominated_activity_mem_kp_zero_free_region`
@@ -55,6 +56,8 @@ Exact stable names currently exported:
 Main hypotheses consumed by the M0/M1-facing surface:
 
 - `YangMills.KP.KPCriterion P a`
+- dominated activity criterion wrapper
+  `LeanZeroFreeRegions.Interfaces.kpCriterion_of_dominated_activity P hKP z hz`
 - packaged M0 membership
   `LeanZeroFreeRegions.Interfaces.kp_zero_free_region P`
 - `[Fintype P.Polymer]`
@@ -86,8 +89,11 @@ Useful source files:
 
 Next exact consumer step: import `LeanZeroFreeRegions.Interfaces` from the
 mother repository and smoke-test
-`unit_fugacity_mem_kp_zero_free_region P hKP hw`, then consume the returned
-membership with `zero_free_of_mem_kp_zero_free_region (P.diskFamily w) h`; keep
+`kpCriterion_of_dominated_activity P hKP z hz` when the downstream wants to
+reuse the original KP weight `a` after replacing activities by a pointwise
+dominated `z`; keep `unit_fugacity_mem_kp_zero_free_region P hKP hw`, then
+consume the returned membership with
+`zero_free_of_mem_kp_zero_free_region (P.diskFamily w) h`; keep
 `partition_unit_fugacity_section_eq P w` as the exact polynomial oracle for the
 one-parameter fugacity section, keep
 `dominated_activity_mem_kp_zero_free_region P hKP z hz` followed by
