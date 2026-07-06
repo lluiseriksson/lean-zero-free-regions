@@ -23,6 +23,13 @@ the mother repository's criterion. -/
 def kp_zero_free_region (P : PolymerSystem) [Fintype P.Polymer] : Prop :=
   KP.InKPZeroFreeRegion P
 
+/-- Stable M0 interface: a KP criterion is a certificate for the packaged
+zero-free-region predicate. -/
+theorem mem_kp_zero_free_region_of_kp (P : PolymerSystem)
+    [Fintype P.Polymer] {a : P.Polymer → ℝ} (hKP : KPCriterion P a) :
+    kp_zero_free_region P :=
+  ⟨a, hKP⟩
+
 /-- Stable M0 interface: KP criterion implies nonvanishing partition function. -/
 theorem zero_free_of_kp (P : PolymerSystem) [Fintype P.Polymer]
     {a : P.Polymer → ℝ} (hKP : KPCriterion P a) :
