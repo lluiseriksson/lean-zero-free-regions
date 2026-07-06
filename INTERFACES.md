@@ -17,6 +17,13 @@ def LeanZeroFreeRegions.Interfaces.kp_zero_free_region
 ```
 
 ```lean
+theorem LeanZeroFreeRegions.Interfaces.mem_kp_zero_free_region_of_kp
+    (P : YangMills.KP.PolymerSystem) [Fintype P.Polymer]
+    {a : P.Polymer → ℝ} (hKP : YangMills.KP.KPCriterion P a) :
+    LeanZeroFreeRegions.Interfaces.kp_zero_free_region P
+```
+
+```lean
 theorem LeanZeroFreeRegions.Interfaces.zero_free_of_kp
     (P : YangMills.KP.PolymerSystem) [Fintype P.Polymer]
     {a : P.Polymer → ℝ} (hKP : YangMills.KP.KPCriterion P a) :

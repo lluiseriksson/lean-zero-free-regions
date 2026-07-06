@@ -1,27 +1,27 @@
 # Status
 
-Last satellite check: 2026-07-06T09:56:46Z.
+Last satellite check: 2026-07-06T12:11:25Z.
 
-Checked HEAD: `bbca62bf43133571a1a62d8fa889889d5dbe0453`
-(`update status for 3dca6ae main (#30)`).
+Checked HEAD: `6b9fa810c1d415da62d8881e69c549bda28a0ec1`
+(`expose dominated KP criterion interface (#31)`).
 
 Remote health at check time:
 
 - `CI` on `main` for this HEAD: success
-  ([run 28780079936](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28780079936)).
+  ([run 28787847412](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28787847412)).
 - `heartbeat` on `main` for this HEAD: success
-  ([run 28780700009](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28780700009)).
+  ([run 28787847452](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28787847452)).
 
 Most recent merged satellite PR:
 
-- [#30](https://github.com/lluiseriksson/lean-zero-free-regions/pull/30)
-  refreshed this status digest after
-  `unit_fugacity_mem_kp_zero_free_region` landed.
+- [#31](https://github.com/lluiseriksson/lean-zero-free-regions/pull/31)
+  exposed `kpCriterion_of_dominated_activity` on the stable interface.
 
-This branch exposes a small composable M0 wrapper for KP monotonicity:
-`kpCriterion_of_dominated_activity` reuses the same KP weight for any
-pointwise dominated activity. No existing interface name or signature changed,
-and no new mathematical claim is introduced.
+This branch adds a small composable M0 wrapper:
+`mem_kp_zero_free_region_of_kp` converts a mother-facing
+`YangMills.KP.KPCriterion P a` into the packaged
+`kp_zero_free_region P` predicate. No existing interface name or signature
+changed, and no new mathematical claim is introduced.
 
 ## Mother-facing digest
 
@@ -34,6 +34,7 @@ import LeanZeroFreeRegions.Interfaces
 Exact stable names currently exported:
 
 - `LeanZeroFreeRegions.Interfaces.kp_zero_free_region`
+- `LeanZeroFreeRegions.Interfaces.mem_kp_zero_free_region_of_kp`
 - `LeanZeroFreeRegions.Interfaces.zero_free_of_kp`
 - `LeanZeroFreeRegions.Interfaces.kpCriterion_of_dominated_activity`
 - `LeanZeroFreeRegions.Interfaces.zero_free_of_mem_kp_zero_free_region`
@@ -56,6 +57,8 @@ Exact stable names currently exported:
 Main hypotheses consumed by the M0/M1-facing surface:
 
 - `YangMills.KP.KPCriterion P a`
+- direct packaged-region wrapper
+  `LeanZeroFreeRegions.Interfaces.mem_kp_zero_free_region_of_kp P hKP`
 - dominated activity criterion wrapper
   `LeanZeroFreeRegions.Interfaces.kpCriterion_of_dominated_activity P hKP z hz`
 - packaged M0 membership
@@ -89,6 +92,8 @@ Useful source files:
 
 Next exact consumer step: import `LeanZeroFreeRegions.Interfaces` from the
 mother repository and smoke-test
+`mem_kp_zero_free_region_of_kp P hKP` when the downstream wants the packaged
+M0 predicate directly from a KP criterion; keep
 `kpCriterion_of_dominated_activity P hKP z hz` when the downstream wants to
 reuse the original KP weight `a` after replacing activities by a pointwise
 dominated `z`; keep `unit_fugacity_mem_kp_zero_free_region P hKP hw`, then
