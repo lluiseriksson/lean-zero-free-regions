@@ -1,23 +1,23 @@
 # Status
 
-Last satellite check: 2026-07-06T00:05:12Z.
+Last satellite check: 2026-07-06T01:10:41Z.
 
-Checked HEAD: `ec3601d1397ef39d38547b8f60aceddbe9729400`
-(`update status for 5e85474 main (#22)`).
+Checked HEAD: `e1dfb95cb1baad56a9ddd506360989f3480ad2b8`
+(`update status for ec3601d main (#23)`).
 
 Remote health at check time:
 
 - `CI` on `main` for this HEAD: success
-  ([run 28758015603](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28758015603)).
+  ([run 28759930962](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28759930962)).
 - `heartbeat` on `main` for this HEAD: success
-  ([run 28758713673](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28758713673)).
+  ([run 28759930963](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28759930963)).
 
 Most recent merged satellite PR:
 
-- [#22](https://github.com/lluiseriksson/lean-zero-free-regions/pull/22)
-  refreshed this mother-facing digest after #21 landed.
+- [#23](https://github.com/lluiseriksson/lean-zero-free-regions/pull/23)
+  refreshed this mother-facing digest after #22 landed.
 
-This check is documentation-only after #22 landed. No existing interface name or
+This check is documentation-only after #23 landed. No existing interface name or
 signature changed, and no new mathematical claim is introduced.
 
 ## Mother-facing digest
