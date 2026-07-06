@@ -1,23 +1,23 @@
 # Status
 
-Last satellite check: 2026-07-06T17:41:06Z.
+Last satellite check: 2026-07-06T18:45:25Z.
 
-Checked HEAD: `c6cfd4edcc8f69d1d68f5bb48867410f882eb4a4`
-(`update status for e044bef main (#33)`).
+Checked HEAD: `df2f955cb65a0c82a43dba7056289bd05839c05f`
+(`expose analytic log zero-free interface (#34)`).
 
 Remote health at check time:
 
 - `CI` on `main` for this HEAD: success
-  ([run 28807812520](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28807812520)).
+  ([run 28812038134](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28812038134)).
 - `heartbeat` on `main` for this HEAD: success
-  ([run 28807814199](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28807814199)).
+  ([run 28812037951](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28812037951)).
 
 Most recent merged satellite PR:
 
-- [#33](https://github.com/lluiseriksson/lean-zero-free-regions/pull/33)
-  refreshed this status digest after #32 landed.
+- [#34](https://github.com/lluiseriksson/lean-zero-free-regions/pull/34)
+  exposed the analytic-log zero-free wrapper and refreshed the interface digest.
 
-This branch adds a small composable M1 wrapper:
+Main now includes a small composable M1 wrapper:
 `zero_free_of_analytic_log_partition` exposes the already-proved implication
 from an explicit `AnalyticLogPartitionHypothesis Omega Z logZ` to
 `forall z in Omega, Z z != 0`. It does not construct an analytic logarithm,
