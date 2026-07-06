@@ -24,6 +24,15 @@ theorem LeanZeroFreeRegions.Interfaces.zero_free_of_kp
 ```
 
 ```lean
+theorem LeanZeroFreeRegions.Interfaces.kpCriterion_of_dominated_activity
+    (P : YangMills.KP.PolymerSystem) [Fintype P.Polymer]
+    {a : P.Polymer → ℝ} (hKP : YangMills.KP.KPCriterion P a)
+    (z : P.Polymer → ℂ)
+    (hz : ∀ X, ‖z X‖ ≤ ‖P.activity X‖) :
+    YangMills.KP.KPCriterion (P.withActivity z) a
+```
+
+```lean
 theorem LeanZeroFreeRegions.Interfaces.zero_free_of_mem_kp_zero_free_region
     (P : YangMills.KP.PolymerSystem) [Fintype P.Polymer]
     (h : LeanZeroFreeRegions.Interfaces.kp_zero_free_region P) :
