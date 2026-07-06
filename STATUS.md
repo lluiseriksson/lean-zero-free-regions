@@ -1,27 +1,27 @@
 # Status
 
-Last satellite check: 2026-07-06T14:26:33Z.
+Last satellite check: 2026-07-06T17:41:06Z.
 
-Checked HEAD: `e044bef1ea4e6b1a27a49f2fa8917646a4caa469`
-(`expose KP region membership wrapper (#32)`).
+Checked HEAD: `c6cfd4edcc8f69d1d68f5bb48867410f882eb4a4`
+(`update status for e044bef main (#33)`).
 
 Remote health at check time:
 
 - `CI` on `main` for this HEAD: success
-  ([run 28797254454](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28797254454)).
+  ([run 28807812520](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28807812520)).
 - `heartbeat` on `main` for this HEAD: success
-  ([run 28797253571](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28797253571)).
+  ([run 28807814199](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28807814199)).
 
 Most recent merged satellite PR:
 
-- [#32](https://github.com/lluiseriksson/lean-zero-free-regions/pull/32)
-  exposed `mem_kp_zero_free_region_of_kp` on the stable interface.
+- [#33](https://github.com/lluiseriksson/lean-zero-free-regions/pull/33)
+  refreshed this status digest after #32 landed.
 
-The latest merged unit added a small composable M0 wrapper:
-`mem_kp_zero_free_region_of_kp` converts a mother-facing
-`YangMills.KP.KPCriterion P a` into the packaged
-`kp_zero_free_region P` predicate. No existing interface name or signature
-changed, and no new mathematical claim is introduced.
+This branch adds a small composable M1 wrapper:
+`zero_free_of_analytic_log_partition` exposes the already-proved implication
+from an explicit `AnalyticLogPartitionHypothesis Omega Z logZ` to
+`forall z in Omega, Z z != 0`. It does not construct an analytic logarithm,
+and no clustering or frontier theorem is asserted.
 
 ## Mother-facing digest
 
@@ -44,6 +44,7 @@ Exact stable names currently exported:
 - `LeanZeroFreeRegions.Interfaces.zero_free_unit_fugacity_disc_of_kp`
 - `LeanZeroFreeRegions.Interfaces.analyticOn_partition_unit_fugacity_section`
 - `LeanZeroFreeRegions.Interfaces.partition_unit_fugacity_section_eq`
+- `LeanZeroFreeRegions.Interfaces.zero_free_of_analytic_log_partition`
 - `LeanZeroFreeRegions.Interfaces.analytic_clustering_package`
 - `LeanZeroFreeRegions.Interfaces.lee_yang_circle_of_hypothesis`
 - `LeanZeroFreeRegions.Interfaces.all_zeros_on_unit_circle_mul`
@@ -72,6 +73,8 @@ Main hypotheses consumed by the M0/M1-facing surface:
   `LeanZeroFreeRegions.Interfaces.partition_unit_fugacity_section_eq P w`
 - explicit analytic-log hypothesis
   `LeanZeroFreeRegions.AnalyticLogPartitionHypothesis Omega Z logZ`
+- direct M1 zero-free wrapper
+  `LeanZeroFreeRegions.Interfaces.zero_free_of_analytic_log_partition hAnalytic`
 - explicit clustering hypothesis
   `LeanZeroFreeRegions.TruncatedCorrelationDecay`
 - one-bond M2 hypothesis `hc : |c| <= 1` for
@@ -103,7 +106,9 @@ consume the returned membership with
 one-parameter fugacity section, keep
 `dominated_activity_mem_kp_zero_free_region P hKP z hz` followed by
 `zero_free_of_mem_kp_zero_free_region (P.withActivity z) h` as the dominated
-M0 nonvanishing smoke test, keep `two_single_bond_product_circle` as the
-current M2 smoke test under separate hypotheses `hc1 : |c1| <= 1` and
-`hc2 : |c2| <= 1`, and keep analytic-log and clustering claims behind their
-explicit M1 hypotheses.
+M0 nonvanishing smoke test, keep
+`zero_free_of_analytic_log_partition hAnalytic z hzOmega` when the downstream
+already has an explicit analytic-log hypothesis and only needs nonvanishing,
+keep `two_single_bond_product_circle` as the current M2 smoke test under
+separate hypotheses `hc1 : |c1| <= 1` and `hc2 : |c2| <= 1`, and keep
+analytic-log and clustering claims behind their explicit M1 hypotheses.
