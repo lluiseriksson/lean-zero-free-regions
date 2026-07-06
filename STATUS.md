@@ -1,23 +1,23 @@
 # Status
 
-Last satellite check: 2026-07-06T12:11:25Z.
+Last satellite check: 2026-07-06T14:26:33Z.
 
-Checked HEAD: `6b9fa810c1d415da62d8881e69c549bda28a0ec1`
-(`expose dominated KP criterion interface (#31)`).
+Checked HEAD: `e044bef1ea4e6b1a27a49f2fa8917646a4caa469`
+(`expose KP region membership wrapper (#32)`).
 
 Remote health at check time:
 
 - `CI` on `main` for this HEAD: success
-  ([run 28787847412](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28787847412)).
+  ([run 28797254454](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28797254454)).
 - `heartbeat` on `main` for this HEAD: success
-  ([run 28787847452](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28787847452)).
+  ([run 28797253571](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28797253571)).
 
 Most recent merged satellite PR:
 
-- [#31](https://github.com/lluiseriksson/lean-zero-free-regions/pull/31)
-  exposed `kpCriterion_of_dominated_activity` on the stable interface.
+- [#32](https://github.com/lluiseriksson/lean-zero-free-regions/pull/32)
+  exposed `mem_kp_zero_free_region_of_kp` on the stable interface.
 
-This branch adds a small composable M0 wrapper:
+The latest merged unit added a small composable M0 wrapper:
 `mem_kp_zero_free_region_of_kp` converts a mother-facing
 `YangMills.KP.KPCriterion P a` into the packaged
 `kp_zero_free_region P` predicate. No existing interface name or signature
