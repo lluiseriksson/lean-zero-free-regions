@@ -1,26 +1,27 @@
 # Status
 
-Last satellite check: 2026-07-06T06:42:00Z.
+Last satellite check: 2026-07-06T08:05:00Z.
 
-Checked HEAD: `211077e44ae209c2634f83b012778800fc79edda`
-(`update status for f976150 main (#27)`).
+Checked HEAD: `d40551bc19b4afab87988fb15264138096b740d4`
+(`Merge pull request #28 from lluiseriksson/codex/update-status-head-211077e`).
 
 Remote health at check time:
 
 - `CI` on `main` for this HEAD: success
-  ([run 28771589689](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28771589689)).
+  ([run 28773377374](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28773377374)).
 - `heartbeat` on `main` for this HEAD: success
-  ([run 28771589594](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28771589594)).
+  ([run 28773376548](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28773376548)).
 
 Most recent merged satellite PR:
 
-- [#27](https://github.com/lluiseriksson/lean-zero-free-regions/pull/27)
+- [#28](https://github.com/lluiseriksson/lean-zero-free-regions/pull/28)
   refreshed this mother-facing digest after the unit-fugacity
   polynomial-section interface landed.
 
-This check refreshes the mother-facing heartbeat/digest for the post-#27 main
-HEAD. No existing interface name or signature changed, and no new mathematical
-claim is introduced.
+This check exposes a small composable M0 wrapper for the unit-fugacity section:
+membership in the packaged KP zero-free-region predicate follows from the same
+KP certificate and `‖w‖ ≤ 1`. No existing interface name or signature changed,
+and no new mathematical claim is introduced.
 
 ## Mother-facing digest
 
@@ -37,6 +38,7 @@ Exact stable names currently exported:
 - `LeanZeroFreeRegions.Interfaces.zero_free_of_mem_kp_zero_free_region`
 - `LeanZeroFreeRegions.Interfaces.zero_free_polydisc_of_kp`
 - `LeanZeroFreeRegions.Interfaces.dominated_activity_mem_kp_zero_free_region`
+- `LeanZeroFreeRegions.Interfaces.unit_fugacity_mem_kp_zero_free_region`
 - `LeanZeroFreeRegions.Interfaces.zero_free_unit_fugacity_disc_of_kp`
 - `LeanZeroFreeRegions.Interfaces.analyticOn_partition_unit_fugacity_section`
 - `LeanZeroFreeRegions.Interfaces.partition_unit_fugacity_section_eq`
@@ -58,6 +60,8 @@ Main hypotheses consumed by the M0/M1-facing surface:
 - `[Fintype P.Polymer]`
 - dominated activity hypothesis `hz : forall X, norm (z X) <= norm (P.activity X)`
 - unit fugacity hypothesis `hw : norm w <= 1`
+- packaged unit-fugacity membership
+  `LeanZeroFreeRegions.Interfaces.unit_fugacity_mem_kp_zero_free_region P hKP hw`
 - explicit polynomial-section identity
   `LeanZeroFreeRegions.Interfaces.partition_unit_fugacity_section_eq P w`
 - explicit analytic-log hypothesis
@@ -82,11 +86,13 @@ Useful source files:
 
 Next exact consumer step: import `LeanZeroFreeRegions.Interfaces` from the
 mother repository and smoke-test
+`unit_fugacity_mem_kp_zero_free_region P hKP hw`, then consume the returned
+membership with `zero_free_of_mem_kp_zero_free_region (P.diskFamily w) h`; keep
 `partition_unit_fugacity_section_eq P w` as the exact polynomial oracle for the
-one-parameter fugacity section; keep
+one-parameter fugacity section, keep
 `dominated_activity_mem_kp_zero_free_region P hKP z hz` followed by
-`zero_free_of_mem_kp_zero_free_region (P.withActivity z) h` as the M0
-nonvanishing smoke test, keep `two_single_bond_product_circle` as the current
-M2 smoke test under separate hypotheses `hc1 : |c1| <= 1` and
+`zero_free_of_mem_kp_zero_free_region (P.withActivity z) h` as the dominated
+M0 nonvanishing smoke test, keep `two_single_bond_product_circle` as the
+current M2 smoke test under separate hypotheses `hc1 : |c1| <= 1` and
 `hc2 : |c2| <= 1`, and keep analytic-log and clustering claims behind their
 explicit M1 hypotheses.

@@ -52,6 +52,20 @@ theorem dominated_activity_mem_kp_zero_free_region (P : PolymerSystem)
     kp_zero_free_region (P.withActivity z) :=
   KP.inKPZeroFreeRegion_withActivity P hKP z hz
 
+/-- Stable M0 interface: the one-parameter unit fugacity section remains inside
+the packaged KP zero-free-region predicate. -/
+theorem unit_fugacity_mem_kp_zero_free_region (P : PolymerSystem)
+    [Fintype P.Polymer] {a : P.Polymer → ℝ} (hKP : KPCriterion P a)
+    {w : ℂ} (hw : ‖w‖ ≤ 1) :
+    @kp_zero_free_region (P.diskFamily w)
+      (PolymerSystem.fintype_withActivity P (fun X => w * P.activity X)) := by
+  refine dominated_activity_mem_kp_zero_free_region P hKP (fun X => w * P.activity X) ?_
+  intro X
+  rw [norm_mul]
+  calc ‖w‖ * ‖P.activity X‖ ≤ 1 * ‖P.activity X‖ :=
+        mul_le_mul_of_nonneg_right hw (norm_nonneg _)
+    _ = ‖P.activity X‖ := one_mul _
+
 /-- Stable M0 interface: the one-parameter fugacity section is nonvanishing on
 the closed unit disc. -/
 theorem zero_free_unit_fugacity_disc_of_kp (P : PolymerSystem)
