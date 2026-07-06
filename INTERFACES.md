@@ -103,6 +103,13 @@ theorem LeanZeroFreeRegions.Interfaces.partition_unit_fugacity_section_eq
 ## M1
 
 ```lean
+theorem LeanZeroFreeRegions.Interfaces.zero_free_of_analytic_log_partition
+    {Ω : Set ℂ} {Z logZ : ℂ → ℂ}
+    (h : LeanZeroFreeRegions.AnalyticLogPartitionHypothesis Ω Z logZ) :
+    ∀ z ∈ Ω, Z z ≠ 0
+```
+
+```lean
 def LeanZeroFreeRegions.Interfaces.analytic_clustering_package
     {Ω : Set ℂ} {Z logZ : ℂ → ℂ}
     (hAnalytic : LeanZeroFreeRegions.AnalyticLogPartitionHypothesis Ω Z logZ)

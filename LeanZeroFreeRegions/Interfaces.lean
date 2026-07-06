@@ -115,6 +115,13 @@ def analytic_clustering_package {Ω : Set ℂ} {Z logZ : ℂ → ℂ}
     ZeroFreeAnalyticClusteringPackage Ω Z logZ :=
   zeroFreeAnalyticClusteringPackage_of_hypotheses hAnalytic hClustering
 
+/-- Stable M1 interface: an explicit analytic logarithm implies zero-freeness
+of the partition function on the same domain. -/
+theorem zero_free_of_analytic_log_partition {Ω : Set ℂ} {Z logZ : ℂ → ℂ}
+    (h : AnalyticLogPartitionHypothesis Ω Z logZ) :
+    ∀ z ∈ Ω, Z z ≠ 0 :=
+  LeanZeroFreeRegions.zero_free_of_analytic_log_partition h
+
 /-- Stable M2 interface: Lee-Yang circle conclusion from explicit theorem
 hypothesis. -/
 theorem lee_yang_circle_of_hypothesis (I : FerromagneticIsingInstance)
