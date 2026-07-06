@@ -1,24 +1,24 @@
 # Status
 
-Last satellite check: 2026-07-06T08:05:00Z.
+Last satellite check: 2026-07-06T08:48:04Z.
 
-Checked HEAD: `d40551bc19b4afab87988fb15264138096b740d4`
-(`Merge pull request #28 from lluiseriksson/codex/update-status-head-211077e`).
+Checked HEAD: `3dca6ae932032b4d03111ed0caf8f5982a5cf02b`
+(`expose unit fugacity KP membership (#29)`).
 
 Remote health at check time:
 
-- `CI` on `main` for this HEAD: success
-  ([run 28773377374](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28773377374)).
 - `heartbeat` on `main` for this HEAD: success
-  ([run 28773376548](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28773376548)).
+  ([run 28777784795](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28777784795)).
+- `CI` on `main` for this HEAD: success
+  ([run 28777784734](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28777784734)).
 
 Most recent merged satellite PR:
 
-- [#28](https://github.com/lluiseriksson/lean-zero-free-regions/pull/28)
-  refreshed this mother-facing digest after the unit-fugacity
-  polynomial-section interface landed.
+- [#29](https://github.com/lluiseriksson/lean-zero-free-regions/pull/29)
+  exposed `unit_fugacity_mem_kp_zero_free_region`, a packaged membership
+  theorem for the unit-fugacity KP zero-free region.
 
-This check exposes a small composable M0 wrapper for the unit-fugacity section:
+The checked HEAD exposes a small composable M0 wrapper for the unit-fugacity section:
 membership in the packaged KP zero-free-region predicate follows from the same
 KP certificate and `‖w‖ ≤ 1`. No existing interface name or signature changed,
 and no new mathematical claim is introduced.
