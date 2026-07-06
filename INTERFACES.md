@@ -67,6 +67,15 @@ theorem LeanZeroFreeRegions.Interfaces.analyticOn_partition_unit_fugacity_sectio
       Set.univ
 ```
 
+```lean
+theorem LeanZeroFreeRegions.Interfaces.partition_unit_fugacity_section_eq
+    (P : YangMills.KP.PolymerSystem) [Fintype P.Polymer] (w : ℂ) :
+    YangMills.KP.partition (P.diskFamily w)
+      (Finset.univ : Finset P.Polymer)
+      = ∑ S ∈ Finset.univ.powerset.filter (YangMills.KP.Admissible P),
+          w ^ S.card * ∏ X ∈ S, P.activity X
+```
+
 ## M1
 
 ```lean

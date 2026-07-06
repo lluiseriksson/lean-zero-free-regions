@@ -14,7 +14,7 @@ breaking and must be mirrored in `INTERFACES.md`.
 namespace LeanZeroFreeRegions
 namespace Interfaces
 
-open scoped Classical
+open scoped Classical BigOperators
 open YangMills.KP
 
 /-- Stable M0 predicate interface: a finite polymer system is in the current
@@ -68,6 +68,15 @@ theorem analyticOn_partition_unit_fugacity_section (P : PolymerSystem)
       (fun w => partition (P.diskFamily w) (Finset.univ : Finset P.Polymer))
       Set.univ :=
   KP.analyticOn_partition_diskFamily P
+
+/-- Stable M1 substrate interface: the one-parameter fugacity section is the
+explicit finite polynomial in the fugacity parameter. -/
+theorem partition_unit_fugacity_section_eq (P : PolymerSystem)
+    [Fintype P.Polymer] (w : ℂ) :
+    partition (P.diskFamily w) (Finset.univ : Finset P.Polymer)
+      = ∑ S ∈ Finset.univ.powerset.filter (Admissible P),
+          w ^ S.card * ∏ X ∈ S, P.activity X :=
+  KP.partition_diskFamily_eq P w
 
 /-- Stable M1 interface: explicit analytic-log and clustering hypotheses assemble
 the zero-free/analytic/clustering package. -/
