@@ -1,21 +1,21 @@
 # Status
 
-Last satellite check: 2026-07-07T02:21:40Z.
+Last satellite check: 2026-07-07T03:37:49Z.
 
-Checked HEAD: `83643c5629e077d9bf2a14d3e56868cc8c154798`
-(`update status for 8ffcc48 main (#40)`).
+Checked HEAD: `86b039f58f7b58693f1ea0a17b080a9a6db4f73c`
+(`update status for 83643c5 main (#41)`).
 
 Remote health at check time:
 
 - `CI` on `main` for this HEAD: success
-  ([run 28835125325](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28835125325)).
+  ([run 28837216868](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28837216868)).
 - `heartbeat` on `main` for this HEAD: success
-  ([run 28835125327](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28835125327)).
+  ([run 28837216826](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28837216826)).
 
 Most recent merged satellite PR:
 
-- [#40](https://github.com/lluiseriksson/lean-zero-free-regions/pull/40)
-  refreshed this status digest after PR #39 landed.
+- [#41](https://github.com/lluiseriksson/lean-zero-free-regions/pull/41)
+  refreshed this status digest after PR #40 landed.
 
 Main still includes a small composable M1 wrapper:
 `zero_free_of_analytic_log_partition` exposes the already-proved implication
