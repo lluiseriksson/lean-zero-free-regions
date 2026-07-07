@@ -81,6 +81,14 @@ theorem unit_fugacity_mem_kp_zero_free_region (P : PolymerSystem)
         mul_le_mul_of_nonneg_right hw (norm_nonneg _)
     _ = ‖P.activity X‖ := one_mul _
 
+/-- Stable M0 smoke-test interface: the zero-fugacity endpoint of the
+one-parameter section lies inside the packaged KP zero-free-region predicate. -/
+theorem zero_fugacity_mem_kp_zero_free_region (P : PolymerSystem)
+    [Fintype P.Polymer] {a : P.Polymer → ℝ} (hKP : KPCriterion P a) :
+    @kp_zero_free_region (P.diskFamily 0)
+      (PolymerSystem.fintype_withActivity P (fun X => (0 : ℂ) * P.activity X)) := by
+  simpa using unit_fugacity_mem_kp_zero_free_region P hKP (w := 0) (by simp)
+
 /-- Stable M0 interface: the one-parameter fugacity section is nonvanishing on
 the closed unit disc. -/
 theorem zero_free_unit_fugacity_disc_of_kp (P : PolymerSystem)
@@ -88,6 +96,13 @@ theorem zero_free_unit_fugacity_disc_of_kp (P : PolymerSystem)
     {w : ℂ} (hw : ‖w‖ ≤ 1) :
     partition (P.diskFamily w) (Finset.univ : Finset P.Polymer) ≠ 0 :=
   KP.partition_diskFamily_ne_zero_of_kp P hKP hw
+
+/-- Stable M0 smoke-test interface: the zero-fugacity endpoint of the
+one-parameter section has nonzero finite-volume partition function. -/
+theorem zero_free_zero_fugacity_of_kp (P : PolymerSystem)
+    [Fintype P.Polymer] {a : P.Polymer → ℝ} (hKP : KPCriterion P a) :
+    partition (P.diskFamily 0) (Finset.univ : Finset P.Polymer) ≠ 0 := by
+  simpa using zero_free_unit_fugacity_disc_of_kp P hKP (w := 0) (by simp)
 
 /-- Stable M1 substrate interface: the one-parameter fugacity section is an
 entire polynomial section. -/
