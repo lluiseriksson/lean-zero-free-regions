@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "reviewed_on": "2026-09-09",
+  "window": {
+    "start": "2026-09-03",
+    "end": "2026-09-09",
+    "calendar_week_start": "2026-09-07"
+  },
+  "coverage": "targeted, non-exhaustive",
+  "repository_card": {
+    "repository": "lluiseriksson/lean-zero-free-regions",
+    "source_ids": [
+      "2609.00867",
+      "2607.10696"
+    ],
+    "local_anchors": [
+      "README.md",
+      "INTERFACES.md",
+      "HYPOTHESIS_FRONTIER.md"
+    ],
+    "frontier": "M0 finite-polymer nonvanishing is documented; M1 analyticity/clustering and the root-location interfaces still carry inputs.",
+    "bridge_hypothesis": "Compare a determinant-based partition-function control with the KP analytic-log route. Dictionary: finite partition function -> determinant or cluster logarithm; preserve normalization and the actual complex parameter. Real-axis moment bounds lose the complex disk and cannot fill the nonvanishing hypothesis.",
+    "next_finite_task": "For a diagonal finite positive matrix, list determinant singularities and compare its exact analytic-log radius with a geometric-series bound. Record the admissible complex domain separately from real exponential integrability.",
+    "falsifier": "Abandon a claimed zero-free improvement if the bound only holds on the real axis or if the proposed disk crosses a determinant zero/pole.",
+    "related_repositories": [
+      "lean-connes-kreimer",
+      "physmath-lean-lemmas",
+      "THE-ERIKSSON-PROGRAMME"
+    ],
+    "proposal_status": "speculative; not executed or formally verified",
+    "eliminated_hypotheses": [],
+    "inspected_commit": "b0b3f2b73ed0207d7818b86f87453120bc447781"
+  },
+  "sources": [
+    {
+      "id": "arxiv:2609.00867",
+      "arxiv_id": "2609.00867",
+      "title": "Uniform Partition-Function Estimates for Coulomb Modulated Energy at All Positive Temperatures",
+      "authors": [
+        "Wang, Zhenfu",
+        "Zhao, Xianliang"
+      ],
+      "first_submitted": "2026-09-01",
+      "latest_revision": "2026-09-01",
+      "reviewed_version": "v1",
+      "url": "https://arxiv.org/abs/2609.00867v1",
+      "doi": "10.48550/arXiv.2609.00867",
+      "verified_on": "2026-09-09",
+      "recency": "background",
+      "publication_status": "preprint; peer-review status not established in this sweep",
+      "evidence_level": "literature",
+      "review_depth": "Abstract and submission history",
+      "source_claim": "Wang and Zhao report particle-number-uniform partition-function bounds for centered Coulomb-type modulated energies in a locally square-integrable regime, with a second-chaos Fredholm-determinant limit.",
+      "limits": "Positive-real-parameter integrability does not establish complex zero-freeness. Particle-number uniformity is not automatically RG-scale, support or volume uniformity in the Yang-Mills activity norm. First posted 1 September.",
+      "tags": [
+        "partition-functions",
+        "uniformity",
+        "gaussian",
+        "fredholm-determinants"
+      ],
+      "abstract_page_sha256": "d577ac4e265c8e5618bd4160f3845a6d6bb559fd37c51e308b27b06394f586db",
+      "reviewed_full_text_sha256": null,
+      "reuse": "Bibliographic metadata and original synthesis only; no permission to train on linked full text is inferred."
+    },
+    {
+      "id": "arxiv:2607.10696",
+      "arxiv_id": "2607.10696",
+      "title": "The planar Hopf algebra of noncommutative multi-indices",
+      "authors": [
+        "Yu, Yong",
+        "Gao, Xing",
+        "Manchon, Dominique"
+      ],
+      "first_submitted": "2026-07-12",
+      "latest_revision": "2026-07-12",
+      "reviewed_version": "v1",
+      "url": "https://arxiv.org/abs/2607.10696v1",
+      "doi": "10.48550/arXiv.2607.10696",
+      "verified_on": "2026-09-09",
+      "recency": "background",
+      "publication_status": "preprint; peer-review status not established in this sweep",
+      "evidence_level": "literature",
+      "review_depth": "v1: abstract, Section 2 and fertility/coproduct construction",
+      "source_claim": "Yu, Gao and Manchon construct a planar noncommutative multi-index Hopf algebra, relate it to Munthe-Kaas-Wright through a fertility map, and describe left-admissible cuts and symmetrization.",
+      "limits": "Planar order and noncommutative products differ from the commutative Connes-Kreimer forest algebra. An algebraic correspondence does not supply analytic cluster convergence. First posted 12 July.",
+      "tags": [
+        "trees",
+        "hopf-algebra",
+        "planar",
+        "noncommutative"
+      ],
+      "abstract_page_sha256": "6ac70970691ff3e8fd42c48245781b35a6bb3ba15a15b2cf9fb5116213c73376",
+      "reviewed_full_text_sha256": "493e47ec5938f96e1b6d2bb9ea5ea2caf7f898ec32aca0db96869df418940507",
+      "reuse": "Bibliographic metadata and original synthesis only; no permission to train on linked full text is inferred."
+    }
+  ]
+}
