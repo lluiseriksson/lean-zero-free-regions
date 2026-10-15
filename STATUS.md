@@ -1,27 +1,28 @@
 # Status
 
-Last satellite check: 2026-07-07T03:37:49Z.
+Last satellite check: 2026-07-07T06:03:54Z.
 
-Checked HEAD: `86b039f58f7b58693f1ea0a17b080a9a6db4f73c`
-(`update status for 83643c5 main (#41)`).
+Checked HEAD: `b0b3f2b73ed0207d7818b86f87453120bc447781`
+(`update status for 86b039f main (#42)`).
 
 Remote health at check time:
 
 - `CI` on `main` for this HEAD: success
-  ([run 28837216868](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28837216868)).
+  ([run 28843612392](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28843612392)).
 - `heartbeat` on `main` for this HEAD: success
-  ([run 28837216826](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28837216826)).
+  ([run 28843612388](https://github.com/lluiseriksson/lean-zero-free-regions/actions/runs/28843612388)).
 
 Most recent merged satellite PR:
 
-- [#41](https://github.com/lluiseriksson/lean-zero-free-regions/pull/41)
-  refreshed this status digest after PR #40 landed.
+- [#42](https://github.com/lluiseriksson/lean-zero-free-regions/pull/42)
+  refreshed this status digest after PR #41 landed.
 
-Main still includes a small composable M1 wrapper:
-`zero_free_of_analytic_log_partition` exposes the already-proved implication
-from an explicit `AnalyticLogPartitionHypothesis Omega Z logZ` to
-`forall z in Omega, Z z != 0`. It does not construct an analytic logarithm,
-and no clustering or frontier theorem is asserted.
+Candidate PR from this check adds a small M0 endpoint smoke-test interface:
+`zero_fugacity_mem_kp_zero_free_region` packages `P.diskFamily 0` in
+`kp_zero_free_region`, and `zero_free_zero_fugacity_of_kp` exposes the
+corresponding nonvanishing partition function. Both are direct specializations
+of the existing unit-fugacity disc interface with `w = 0`; no analytic
+logarithm, clustering, or frontier theorem is asserted.
 
 ## Mother-facing digest
 
@@ -41,7 +42,9 @@ Exact stable names currently exported:
 - `LeanZeroFreeRegions.Interfaces.zero_free_polydisc_of_kp`
 - `LeanZeroFreeRegions.Interfaces.dominated_activity_mem_kp_zero_free_region`
 - `LeanZeroFreeRegions.Interfaces.unit_fugacity_mem_kp_zero_free_region`
+- `LeanZeroFreeRegions.Interfaces.zero_fugacity_mem_kp_zero_free_region`
 - `LeanZeroFreeRegions.Interfaces.zero_free_unit_fugacity_disc_of_kp`
+- `LeanZeroFreeRegions.Interfaces.zero_free_zero_fugacity_of_kp`
 - `LeanZeroFreeRegions.Interfaces.analyticOn_partition_unit_fugacity_section`
 - `LeanZeroFreeRegions.Interfaces.partition_unit_fugacity_section_eq`
 - `LeanZeroFreeRegions.Interfaces.zero_free_of_analytic_log_partition`
@@ -69,6 +72,8 @@ Main hypotheses consumed by the M0/M1-facing surface:
 - unit fugacity hypothesis `hw : norm w <= 1`
 - packaged unit-fugacity membership
   `LeanZeroFreeRegions.Interfaces.unit_fugacity_mem_kp_zero_free_region P hKP hw`
+- zero-fugacity endpoint membership
+  `LeanZeroFreeRegions.Interfaces.zero_fugacity_mem_kp_zero_free_region P hKP`
 - explicit polynomial-section identity
   `LeanZeroFreeRegions.Interfaces.partition_unit_fugacity_section_eq P w`
 - explicit analytic-log hypothesis
@@ -102,6 +107,9 @@ reuse the original KP weight `a` after replacing activities by a pointwise
 dominated `z`; keep `unit_fugacity_mem_kp_zero_free_region P hKP hw`, then
 consume the returned membership with
 `zero_free_of_mem_kp_zero_free_region (P.diskFamily w) h`; keep
+`zero_fugacity_mem_kp_zero_free_region P hKP` and
+`zero_free_zero_fugacity_of_kp P hKP` as the exact endpoint smoke tests for
+`P.diskFamily 0`; keep
 `partition_unit_fugacity_section_eq P w` as the exact polynomial oracle for the
 one-parameter fugacity section, keep
 `dominated_activity_mem_kp_zero_free_region P hKP z hz` followed by

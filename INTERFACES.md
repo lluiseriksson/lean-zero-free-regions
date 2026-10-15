@@ -74,11 +74,26 @@ theorem LeanZeroFreeRegions.Interfaces.unit_fugacity_mem_kp_zero_free_region
 ```
 
 ```lean
+theorem LeanZeroFreeRegions.Interfaces.zero_fugacity_mem_kp_zero_free_region
+    (P : YangMills.KP.PolymerSystem) [Fintype P.Polymer]
+    {a : P.Polymer → ℝ} (hKP : YangMills.KP.KPCriterion P a) :
+    LeanZeroFreeRegions.Interfaces.kp_zero_free_region (P.diskFamily 0)
+```
+
+```lean
 theorem LeanZeroFreeRegions.Interfaces.zero_free_unit_fugacity_disc_of_kp
     (P : YangMills.KP.PolymerSystem) [Fintype P.Polymer]
     {a : P.Polymer → ℝ} (hKP : YangMills.KP.KPCriterion P a)
     {w : ℂ} (hw : ‖w‖ ≤ 1) :
     YangMills.KP.partition (P.diskFamily w)
+      (Finset.univ : Finset P.Polymer) ≠ 0
+```
+
+```lean
+theorem LeanZeroFreeRegions.Interfaces.zero_free_zero_fugacity_of_kp
+    (P : YangMills.KP.PolymerSystem) [Fintype P.Polymer]
+    {a : P.Polymer → ℝ} (hKP : YangMills.KP.KPCriterion P a) :
+    YangMills.KP.partition (P.diskFamily 0)
       (Finset.univ : Finset P.Polymer) ≠ 0
 ```
 
